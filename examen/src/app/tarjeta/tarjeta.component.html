@@ -1,0 +1,25 @@
+<div id="tarjeta">
+<p-card class="card" title="Tarjeta Estudiante" [style]="{width: '100%'}" style="margin-left: 20px; margin-top: 30px" *ngFor="let info of tarjeta">
+  <div >
+    <label style="font-weight: bold">Nombre:</label>
+    {{info.nombre}}
+    <br>
+    <label style="font-weight: bold">Apellido:</label>
+    {{info.apellido}}
+    <br>
+    <label style="font-weight: bold">Fecha de nacimiento:</label>
+    {{info.fechaNacimiento | date}}
+    <br>
+    <label style="font-weight: bold">Semestre Actual:</label>
+    {{info.semestreActual}}
+    <br>
+    <label id="labelGraduado" style="font-weight: bold">Graduado:</label>
+    {{cambiarBolean(info.graduado)}}
+  </div>
+</p-card>
+</div>
+
+
+
+
+

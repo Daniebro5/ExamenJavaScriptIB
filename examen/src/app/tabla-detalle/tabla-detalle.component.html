@@ -1,0 +1,75 @@
+<div id="tablaDetalle" style="padding-bottom: 20px">
+<p-table [value]="datosTabla" *ngFor="let datos of datosTabla">
+  <ng-template pTemplate="header">
+    <h3 style="padding-top: 20px; width: 400px">Estudiante: {{datos[0].nombre}}</h3>
+    <tr>
+      <th style="text-align: center">#</th>
+      <th>Materia</th>
+      <th>Código</th>
+      <th>Descripcción</th>
+      <th>Activo</th>
+      <th>Fecha de creación</th>
+      <th>Horas por semana</th>
+      <th>Id Estudiante</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-car >
+    <tr  *ngFor="let datosTabla of datos[0].detalle; let i = index">
+      <th>{{i+1}}</th>
+      <td >{{datosTabla.materia}}</td>
+      <td >{{datosTabla.codigo}}</td>
+      <td >{{datosTabla.descripcion}}</td>
+      <td >{{cambiarBolean(datosTabla.activo)}}</td>
+      <td >{{datosTabla.fechaCreacion}}</td>
+      <td >{{datosTabla.horasPorSemana}}</td>
+      <td >{{datosTabla.estudianteID}}</td>
+    </tr>
+  </ng-template>
+</p-table>
+
+</div>
+<!--
+<div class="container" style="margin-top: 30px">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col" style="width: 125px; text-align: center">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Fecha Na</th>
+      <th scope="col">Semestre</th>
+      <th scope="col">Graduado</th>
+      <th scope="col">Materia</th>
+    </tr>
+    </thead>
+  </table>
+</div>
+
+<div class="scrollable">
+  <table class="table table-hover">
+    &lt;!&ndash;<thead>
+    <tr>
+      <th scope="col" style="width: 125px; text-align: center">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Fecha Na</th>
+      <th scope="col">Semestre</th>
+      <th scope="col">Graduado</th>
+      <th scope="col">Materia</th>
+    </tr>
+    </thead>&ndash;&gt;
+    <tbody>
+    <tr *ngFor="let datos of datosTabla; let i = index">
+      <th style="width: 125px">{{i+1}}</th>
+      <td style="width: 290px">{{datos[0].nombre}}</td>
+      <td style="width: 290px">{{datos[0].apellido}}</td>
+      <td style="width: 290px">{{datos[0].fechaNacimiento}}</td>
+      <td style="width: 290px">{{datos[0].semestreActual}}</td>
+      <td style="width: 290px">{{datos[0].graduado}}</td>
+      <td style="width: 290px" *ngFor="let datosTabla of datos[0].detalle">{{datosTabla.materia}}
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+-->

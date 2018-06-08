@@ -1,0 +1,40 @@
+<form [formGroup]="formCabecera" id="formCabecera" class="example-form" #cabecera="ngForm" (ngSubmit)="agregarDatos(cabecera)" xmlns="" novalidate>
+  <mat-form-field class="example-full-width">
+    <input type="text" matInput placeholder="Nombre" formControlName="nombre">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input type="text" matInput placeholder="Apellido" formControlName="apellido" >
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput [matDatepicker]="picker" placeholder="Fecha de Nacimiento" formControlName="fechaNacimiento">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field >
+    <mat-select placeholder="Semestre Actual" formControlName="semestreActual" >
+      <mat-option *ngFor="let semestre of semestres" [value]="semestre.value">
+        {{ semestre.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field >
+    <mat-select placeholder="Vengador" formControlName="vengador" >
+      <mat-option *ngFor="let vengador of Vengador" [value]="vengador.value">
+        {{ vengador.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-radio-group formControlName="graduado" style="margin-top: 5px" >
+    <mat-label>Graduado: </mat-label>
+      <mat-radio-button class="example-margin" style="padding-left: 20px" [value]=true>Si</mat-radio-button>
+      <mat-radio-button class="example-margin" style="padding-left: 20px" [value]=false>No</mat-radio-button>
+  </mat-radio-group>
+  <button type="submit" [disabled]="formCabecera.invalid" mat-raised-button color="primary" style="width: 50%; margin-left: 25%; margin-top: 10px">Guardar</button>
+</form>
+
+<button onclick="document.getElementById('formCabecera').reset()" mat-raised-button color="primary" style="margin-top: 5px; margin-left: 25%; width: 50%" >Limpiar</button>
+
+
+
+
+

@@ -1,0 +1,51 @@
+<form [formGroup]="formDetalle" id="formDetalle" class="example-form" #detalle="ngForm" (ngSubmit)="agregarDatos(detalle)" novalidate>
+  <h3 class="first" style="margin-top: 30px">Detalle</h3>
+  <div class="ui-g ui-fluid">
+    <div class="ui-g-6 ui-md-4" style="margin-right: 10px">
+      <div class="ui-inputgroup">
+        <span class="ui-inputgroup"></span>
+        <input type="text" pInputText placeholder="Materia" formControlName="materia">
+      </div>
+    </div>
+    <div class="ui-g-6 ui-md-4" style="margin-right: 10px">
+      <div class="ui-inputgroup">
+        <input type="text" pInputText placeholder="Codigo" formControlName="codigo">
+      </div>
+    </div>
+
+    <div class="ui-g-6 ui-md-4" style="margin-right: 10px">
+      <div class="ui-inputgroup">
+        <input type="text" pInputText placeholder="Descripcción" formControlName="descripcion">
+      </div>
+    </div>
+
+    <div class="ui-g-6 ui-md-4" style="margin-right: 10px">
+      <div class="ui-inputgroup">
+        <label style="padding-right: 10px">Activo</label>
+        <p-checkbox formControlName="activo" [(ngModel)]="checked" binary="true"></p-checkbox>
+      </div>
+    </div>
+    <div class="ui-g-6 ui-md-4" style="margin-right: 10px">
+      <div class="ui-inputgroup">
+        <input type="text" pInputText placeholder="Fecha de creación" formControlName="fechaCreacion">
+      </div>
+    </div>
+
+    <div class="ui-g-6 ui-md-4" style="margin-right: 10px">
+      <div class="ui-inputgroup">
+        <input type="text" pInputText placeholder="Horas por semana" formControlName="horasPorSemana">
+      </div>
+    </div>
+
+    <div class="ui-g-6 ui-md-4" style="margin-right: 10px">
+      <div class="ui-inputgroup">
+        <input type="text" pInputText placeholder="Id Estudiante" formControlName="estudianteID">
+      </div>
+    </div>
+    <button [disabled]="formDetalle.invalid" pButton type="submit" label="Guardar" style="width: 70%"></button>
+  </div>
+</form>
+
+<button id="botonLimpiarDetalle" pButton type="button" label="Limpiar" onclick="document.getElementById('formDetalle').reset()" mat-button style="width: 70%; margin: 10px 0px"></button>
+
+
